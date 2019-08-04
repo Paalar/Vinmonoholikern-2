@@ -1,0 +1,38 @@
+@import "../../assets/style/_shared.scss";
+
+#toggle-row {
+  border: 0.5rem solid $secondary-color;
+  width: 95%;
+  margin: auto;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+#toggle-filter {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+  
+  img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+} 
+
+#toggle-filter:hover {
+  background-color: $primary-color;
+  cursor: pointer;
+}
+
+#toggle-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: $primary-color;
+  // border-top: 0.5rem solid $secondary-color;
+  padding: 0.5rem 1rem;
+}
