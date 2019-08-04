@@ -1,25 +1,24 @@
-import React, { FunctionComponent } from "react";
-import logo from "../../assets/images/logo.svg";
-import "./App.css";
+import React, { FunctionComponent, useState } from "react";
+import { ITableItem } from "../../interfaces/table";
+import ItemTable from "../itemTable/presentational";
+import Header from "../pageHeader/presentational";
+import SearchBar from "../searchBar/presentational";
+import ToggleRow from "../toggleRow/presentational";
+import "./app.scss";
 
-const App: FunctionComponent = () => {
+const App: FunctionComponent = () =>  {
+  const [items, setItems] = useState<ITableItem[]>([]);
+  const [filterItems, setFilterItems] = useState<string[]>([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <div id="content">
+        <SearchBar setItems={setItems} filterItems={filterItems} />
+        <ToggleRow filterItems={filterItems} setFilter={setFilterItems}/>
+        <p><i>Tips: Å søke med ingen tegn søker på alle varer</i></p>
+        <ItemTable items={items}/>
+      </div>
+    </>
   );
 };
 

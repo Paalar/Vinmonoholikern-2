@@ -1,0 +1,40 @@
+@import "../../assets/style/_shared.scss";
+
+$search-bar-border: 1px solid $secondary-color-dark;
+
+.form-container {
+  margin: 1rem;
+}
+
+#search-form {
+  margin: auto;
+  display: flex;
+  position: relative;
+  width: 50%;
+}
+
+#search-bar {
+  background-color: $secondary-color-light;
+  padding: 0.7rem;
+  font-size: 1.5rem;
+  width: 90%;
+  border: $search-bar-border;
+}
+
+#search-button {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 10%;
+  background-color: $primary-color-light;
+  border: $search-bar-border;
+  cursor: pointer;
+}
+
+#search-button:hover {
+  background-color: $secondary-color;
+}
+
+#search-button:active {
+  background-color: $secondary-color-dark;
+}

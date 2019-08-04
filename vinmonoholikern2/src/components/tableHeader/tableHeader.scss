@@ -1,0 +1,12 @@
+@import '../../assets/style/_shared.scss';
+
+#item-table-head {
+  background-color: $primary-color; 
+  padding-left: 1rem;
+
+  tr {
+    th {
+      padding: 1rem 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../assets/style/_shared.scss";
+
+#loading-container {
+  width: auto;
+  margin: auto;
+}
+
+#loading-bar {
+  width: auto;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes animation {
+  0% {transform: translateY(0px)}
+  25% {transform: translateY(-50px)}
+  50% {transform: translateY(0px)}
+  75% {transform: translateY(50px)}
+  100% {transform: translateY(0px)}
+}
+
+.ball-1 {
+  background-color: $secondary-color-dark;
+  animation: animation 1s linear infinite 0.0s;
+}
+
+.ball-2 {
+  background-color: $secondary-color;
+  animation: animation 1s linear infinite 0.2s;
+}
+
+.ball-3 {
+  background-color: $secondary-color-light;
+  animation: animation 1s linear infinite 0.4s;
+}
+
+.loading-ball {
+  border-radius: 10rem;
+  padding: 1rem;
+  margin: 0.5rem;
+}
