@@ -2,16 +2,6 @@ import React, { FunctionComponent } from "react";
 import { headersAlignLeft, tableHeaderValues } from "./strings";
 import "./tableHeader.scss";
 
-const headers = [
-  <th className="td-left">Navn</th>,
-  <th className="td-left">Type</th>,
-  <th>APK</th>,
-  <th>Pris</th>,
-  <th>Alkoholprosent</th>,
-  <th>Volum</th>,
-  <th className="td-left">Bestillingsutvalg</th>,
-];
-
 const TableHeader: FunctionComponent = () => {
   const tableHeaders = tableHeaderValues.map((header) => {
     let className = "";
