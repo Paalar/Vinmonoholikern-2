@@ -1,2 +1,2 @@
-export const url = "http://localhost:4000/graphql";
+export const url = "http://165.22.113.51";
 export const headers = { "Content-Type": "application/json" };
