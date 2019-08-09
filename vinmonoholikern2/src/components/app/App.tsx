@@ -55,9 +55,9 @@ const App: FunctionComponent = () =>  {
       <Header />
       <div id="content">
         <SearchBar dispatchQuery={dispatchQuery} />
+        <p><i>Tips: Å søke med ingen tegn søker på alle varer</i></p>
         <ToggleRow dispatchQuery={dispatchQuery} filterItems={filterItems} />
         {pageable}
-        <p><i>Tips: Å søke med ingen tegn søker på alle varer</i></p>
         <ItemTable items={items} />
         {pageable}
       </div>
