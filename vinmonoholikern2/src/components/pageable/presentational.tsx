@@ -66,8 +66,6 @@ const Pageable: FunctionComponent<IProps> = (props: IProps) => {
     ? createPageableRow(lowerBound, upperBound, pages, pageIndex, dispatchPageable)
     : [];
 
-  console.log(`Lowerbound ${lowerBound}, upperbound ${upperBound}`);
-
   const finalPage =
     createPageableButton({ type: SET_PAGE, payload: pages }, false, `... ${pages}`, "pageable-final");
   const firstPage =
