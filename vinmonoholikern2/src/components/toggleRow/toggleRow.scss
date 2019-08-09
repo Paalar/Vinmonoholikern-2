@@ -1,19 +1,33 @@
 @import "../../assets/style/_shared.scss";
 
-#toggle-row {
-  border: 0.5rem solid $secondary-color;
-  width: 95%;
-  margin: auto;
-  margin-bottom: 1rem;
-  border-radius: 10px;
+.filter-border-bottom {
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
 }
 
-#toggle-filter {
+.filter-border-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.filter-head-hover {
+  background-color: $secondary-color;
+  cursor: pointer;
+}
+
+#filter-container {
+  @extend .filter-border-top;
+  margin-bottom: 1rem;
+}
+
+.filter-head {
+  background-color: $secondary-color-light;
   position: relative;
   display: flex;
   justify-content: space-between;
   padding: 0 1rem;
   align-items: center;
+  @extend .filter-border-top;
   
   img {
     height: 100%;
@@ -21,18 +35,21 @@
     right: 0;
     bottom: 0;
   }
-} 
-
-#toggle-filter:hover {
-  background-color: $primary-color;
-  cursor: pointer;
 }
 
-#toggle-items {
+.filter-head:hover {
+  background-color: $secondary-color;
+}
+
+#filter-head-unactive {
+  @extend .filter-border-bottom;
+}
+
+#filter-items {
+  @extend .filter-border-bottom;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   background-color: $primary-color;
-  // border-top: 0.5rem solid $secondary-color;
   padding: 0.5rem 1rem;
 }
