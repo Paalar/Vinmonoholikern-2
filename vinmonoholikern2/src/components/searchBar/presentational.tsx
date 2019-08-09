@@ -1,11 +1,11 @@
 import React, { ChangeEvent, Dispatch, FormEvent, FunctionComponent, useState } from "react";
-import { IQueryActions, SET_QUERY_TEXT } from "../../reducers/queryReducer";
+import { IQueryAction, SET_QUERY_TEXT } from "../../reducers/queryReducer";
 import "./searchBar.scss";
 
 const iconPath = "./images/search_icon.svg";
 
 interface IProps {
-  dispatchQuery: Dispatch<IQueryActions>;
+  dispatchQuery: Dispatch<IQueryAction>;
 }
 
 const SearchBar: FunctionComponent<IProps> = (props) => {
