@@ -1,18 +1,16 @@
-import React, { ChangeEvent, FormEvent, FunctionComponent, useState } from "react";
-import { queryAllItems, queryItems, queryItemsWithTypes } from "../../api/queryCalls";
-import { ITableItem } from "../../interfaces/table";
+import React, { ChangeEvent, Dispatch, FormEvent, FunctionComponent, useState } from "react";
+import { IQueryActions, SET_QUERY_TEXT } from "../../reducers/queryReducer";
 import "./searchBar.scss";
 
 const iconPath = "./images/search_icon.svg";
 
 interface IProps {
-  setItems: (items: ITableItem[]) => void;
-  filterItems: string[];
+  dispatchQuery: Dispatch<IQueryActions>;
 }
 
 const SearchBar: FunctionComponent<IProps> = (props) => {
+  const { dispatchQuery } = props;
   const [input, setInput] = useState("");
-  const { setItems, filterItems } = props;
 
   const handleTextInput = (event: ChangeEvent<HTMLInputElement>) => {
     const text = event.target.value;
@@ -22,13 +20,7 @@ const SearchBar: FunctionComponent<IProps> = (props) => {
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const parsedInput = input.trim();
-    if (filterItems.length > 0) {
-      queryItemsWithTypes(parsedInput, filterItems, setItems);
-    } else if (parsedInput.length === 0) {
-      queryAllItems(setItems);
-    } else {
-      queryItems(parsedInput, setItems);
-    }
+    dispatchQuery({ type: SET_QUERY_TEXT, payload: parsedInput });
   };
 
   return (
