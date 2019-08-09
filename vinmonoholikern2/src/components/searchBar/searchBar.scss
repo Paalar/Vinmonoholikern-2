@@ -3,22 +3,22 @@
 $search-bar-border: 1px solid $secondary-color-dark;
 
 .form-container {
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
 #search-form {
   margin: auto;
   display: flex;
   position: relative;
-  width: 50%;
 }
 
 #search-bar {
-  background-color: $secondary-color-light;
+  background-color: $primary-color;
   padding: 0.7rem;
   font-size: 1.5rem;
   width: 90%;
-  border: $search-bar-border;
+  border: 0;
+  border-bottom: $search-bar-border;
 }
 
 #search-button {
@@ -26,8 +26,9 @@ $search-bar-border: 1px solid $secondary-color-dark;
   right: 0;
   height: 100%;
   width: 10%;
-  background-color: $primary-color-light;
-  border: $search-bar-border;
+  background-color: $primary-color;
+  border: 0;
+  border-bottom: $search-bar-border;
   cursor: pointer;
 }
 
