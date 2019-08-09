@@ -1,5 +1,5 @@
 import React, { Dispatch, FunctionComponent, useState } from "react";
-import { IQueryActions, SET_FILTER_ITEMS } from "../../reducers/queryReducer";
+import { IQueryAction, SET_FILTER_ITEMS } from "../../reducers/queryReducer";
 import { removeItem } from "../../utils/listFunctions";
 import { productTypes } from "../../utils/productTypes";
 import ToggleButton from "../toggleButton/presentational";
@@ -9,7 +9,7 @@ const chevronUpPath = "./images/chevron_up.svg";
 const chevronDownPath = "./images/chevron_down.svg";
 
 interface IProps {
-  dispatchQuery: (Dispatch<IQueryActions>);
+  dispatchQuery: (Dispatch<IQueryAction>);
   filterItems: string[];
 }
 

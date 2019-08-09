@@ -11,7 +11,7 @@ import "./app.scss";
 
 const initialResponseState: IResponseState = {
   items: [],
-  pages: -1,
+  pages: 1,
 };
 
 const initalQueryState: IQueryState = {

@@ -14,7 +14,7 @@ type ValidPageActions = typeof INCREMENT_PAGE | typeof DECREMENT_PAGE | typeof S
 type ValidQueryActions = typeof SET_QUERY_TEXT | typeof ENABLE_QUERY;
 type ValidFilterActions = typeof SET_FILTER_ITEMS;
 
-export interface IQueryActions {
+export interface IQueryAction {
   type: ValidPageActions | ValidQueryActions | ValidFilterActions;
   payload?: any;
 }
@@ -26,7 +26,7 @@ export interface IQueryState {
   queried: boolean;
 }
 
-const queryReducer = (state: IQueryState, action: IQueryActions): IQueryState => {
+const queryReducer = (state: IQueryState, action: IQueryAction): IQueryState => {
   const { type, payload } = action;
   switch (type) {
     case INCREMENT_PAGE:
