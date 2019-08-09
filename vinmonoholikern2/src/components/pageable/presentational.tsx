@@ -56,6 +56,9 @@ const Pageable: FunctionComponent<IProps> = (props: IProps) => {
     if (pageIndex - (BUTTONS_ON_LEFT + 1) < 0) {
       upperBound += -(pageIndex - BUTTONS_ON_RIGHT - 1);
     }
+    if (lowerBound < 1) {
+      lowerBound = 1;
+    }
   }
 
   const pageable =
