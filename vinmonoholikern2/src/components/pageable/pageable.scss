@@ -2,7 +2,12 @@
 
 #pageable-container {
   display: grid;
-  grid-template-columns: [previous-page] 10% [first-page] 10% [col-pages] 60% [last-page] 10% [next-page] 10%;
+  grid-template-columns:
+    [previous-page] 10%
+    [first-page] 10%
+    [col-pages] 60%
+    [last-page] 10%
+    [next-page] 10%;
   margin: 2rem 0;
 }
 
