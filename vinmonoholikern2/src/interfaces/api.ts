@@ -1,3 +1,10 @@
-import { ITableItems, ITableItem } from "./table";
+import { ITableItem } from "./table";
 
-export type IQueryItemsResult = ITableItems;
+export interface IItemsResponse {
+  data: {
+    items: {
+      items: ITableItem[],
+      pages: number,
+    };
+  };
+}
