@@ -8,7 +8,14 @@ const TableHeader: FunctionComponent = () => {
     if (headersAlignLeft.includes(header)) {
       className = "td-left";
     }
-    return <th className={className} key={header}>{header}</th>;
+    return (
+      <th
+        className={`${className} ${header.class}`}
+        key={header.value}
+      >
+        {header.value}
+    </th>
+    );
   });
   return (
     <thead id="item-table-head">
