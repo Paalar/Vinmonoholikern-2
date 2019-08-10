@@ -1,12 +1,12 @@
 import React, { Dispatch, FunctionComponent, useReducer } from "react";
 import { queryAllItems, queryItems, queryItemsWithTypes } from "../../api/queryCalls";
 import pageableReducer, { ENABLE_QUERY, IQueryState } from "../../reducers/queryReducer";
-import itemResponseReducer, { IResponseState, IResponseActions } from "../../reducers/responseReducer";
+import itemResponseReducer, { IResponseActions, IResponseState } from "../../reducers/responseReducer";
+import FilterDropDownList from "../filterDropDownList/presentational";
 import ItemTable from "../itemTable/presentational";
 import Pageable from "../pageable/presentational";
 import Header from "../pageHeader/presentational";
 import SearchBar from "../searchBar/presentational";
-import ToggleRow from "../toggleRow/presentational";
 import "./app.scss";
 
 const initialResponseState: IResponseState = {
@@ -56,7 +56,7 @@ const App: FunctionComponent = () =>  {
       <div id="content">
         <SearchBar dispatchQuery={dispatchQuery} />
         <p><i>Tips: Å søke med ingen tegn søker på alle varer</i></p>
-        <ToggleRow dispatchQuery={dispatchQuery} filterItems={filterItems} />
+        <FilterDropDownList dispatchQuery={dispatchQuery} filterItems={filterItems} />
         {pageable}
         <ItemTable items={items} />
         {pageable}

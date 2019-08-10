@@ -14,12 +14,12 @@ $active-color: #cbef53;
 }
 
 .toggle-on {
-  background-color: $active-color;
+  background-color: $secondary-color-light;
   @include toggle-shadow;
 }
 
 .toggle-button:hover {
-  background-color: $secondary-color-light;
+  background-color: $secondary-color;
   @include toggle-shadow;
   cursor: pointer;
 }
