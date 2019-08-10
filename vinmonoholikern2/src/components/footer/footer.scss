@@ -1,0 +1,15 @@
+@import "../../assets/style/_shared.scss";
+
+#footer {
+  background-color: $primary-color;
+}
+
+#footer-seperator {
+  background-color: $secondary-color-light;
+  height: 3rem;
+  width: 100%;
+}
+
+#footer-info {
+  padding: 4rem;
+}
