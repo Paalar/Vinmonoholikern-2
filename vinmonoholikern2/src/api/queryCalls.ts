@@ -1,6 +1,5 @@
 import { Dispatch } from "react";
 import { IItemsResponse } from "../interfaces/api";
-import { ITableItem } from "../interfaces/table";
 import { IResponseActions, SET_RESPONSE } from "../reducers/responseReducer";
 import { headers, url } from "./constants";
 

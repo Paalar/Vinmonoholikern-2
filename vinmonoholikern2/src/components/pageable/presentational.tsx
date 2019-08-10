@@ -93,6 +93,7 @@ const createPageableRow = (
     const isActive = i === pageIndex;
     const page = (
     <PageableButton
+      key={i}
       isActive={isActive}
       onClick={dispatch}
       action={{ type: SET_PAGE, payload: i }}

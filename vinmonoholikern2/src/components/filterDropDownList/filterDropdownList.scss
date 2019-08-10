@@ -18,6 +18,7 @@
 #filter-container {
   @extend .filter-border-top;
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .filter-head {
@@ -47,9 +48,12 @@
 
 #filter-items {
   @extend .filter-border-bottom;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-evenly; */
+  display: grid;
+  grid-template-columns: repeat(3, [col-types] 33%);
+  grid-template-rows: repeat(2, [row-types] 50%);
   background-color: $primary-color;
-  padding: 0.5rem 1rem;
+  padding: 2rem 1rem 3rem 1rem;
 }

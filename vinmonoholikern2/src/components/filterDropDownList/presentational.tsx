@@ -1,19 +1,18 @@
 import React, { Dispatch, FunctionComponent, useState } from "react";
-import { IQueryAction, SET_FILTER_ITEMS } from "../../reducers/queryReducer";
-import { removeItem } from "../../utils/listFunctions";
-import { productTypes } from "../../utils/productTypes";
-import ToggleButton from "../toggleButton/presentational";
-import "./toggleRow.scss";
+import { IQueryAction } from "../../reducers/queryReducer";
+import { productDropdownList } from "../../utils/productTypes";
+import FilterDropdown from "../filterDropDown/presentational";
+import "./filterDropdownList.scss";
 
 const chevronUpPath = "./images/chevron_up.svg";
 const chevronDownPath = "./images/chevron_down.svg";
 
 interface IProps {
-  dispatchQuery: (Dispatch<IQueryAction>);
+  dispatchQuery: Dispatch<IQueryAction>;
   filterItems: string[];
 }
 
-const ToggleRow: FunctionComponent<IProps> = (props) => {
+const FilterDropdownList: FunctionComponent<IProps> = (props) => {
   const { dispatchQuery, filterItems } = props;
   const [ showFilters, setShow ] = useState(false);
   const toggleShowFilter = () => setShow(!showFilters);
@@ -21,17 +20,14 @@ const ToggleRow: FunctionComponent<IProps> = (props) => {
   const hideFilters = showFilters ? undefined : { display: "none" };
   const toggleFilterId = showFilters ? "filter-head-active" : "filter-head-unactive";
 
-  const toggleType = (type: string) => {
-    if (filterItems.includes(type)) {
-      const newFilter = removeItem(filterItems, type);
-      dispatchQuery({ type: SET_FILTER_ITEMS, payload: newFilter });
-    } else {
-      filterItems.push(type);
-      dispatchQuery({ type: SET_FILTER_ITEMS, payload: filterItems });
-    }
-  };
-  const toggleButtons = productTypes.map((type) =>
-    <ToggleButton key={type} name={type} toggleType={toggleType}/>);
+  const toggleButtons = productDropdownList.map((dropdown) =>
+    <FilterDropdown
+      key={dropdown.name}
+      dropdown={dropdown}
+      filterItems={filterItems}
+      dispatch={dispatchQuery}
+    />);
+
   return (
     <div id="filter-container">
       <div className="filter-head" id={toggleFilterId} onClick={toggleShowFilter}>
@@ -45,4 +41,4 @@ const ToggleRow: FunctionComponent<IProps> = (props) => {
   );
 };
 
-export default ToggleRow;
+export default FilterDropdownList;
