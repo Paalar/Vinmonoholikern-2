@@ -19,6 +19,7 @@ $search-bar-border: 1px solid $secondary-color-dark;
   width: 90%;
   border: 0;
   border-bottom: $search-bar-border;
+  cursor: text;
 }
 
 #search-button {
