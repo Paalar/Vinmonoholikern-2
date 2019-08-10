@@ -3,6 +3,7 @@ import { queryAllItems, queryItems, queryItemsWithTypes } from "../../api/queryC
 import pageableReducer, { ENABLE_QUERY, IQueryState } from "../../reducers/queryReducer";
 import itemResponseReducer, { IResponseActions, IResponseState } from "../../reducers/responseReducer";
 import FilterDropDownList from "../filterDropDownList/presentational";
+import Footer from "../footer/presentational";
 import ItemTable from "../itemTable/presentational";
 import Pageable from "../pageable/presentational";
 import Header from "../pageHeader/presentational";
@@ -61,6 +62,7 @@ const App: FunctionComponent = () =>  {
         <ItemTable items={items} />
         {pageable}
       </div>
+      <Footer />
     </>
   );
 };

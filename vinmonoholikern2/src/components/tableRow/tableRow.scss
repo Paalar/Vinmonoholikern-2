@@ -1,26 +1,8 @@
 @import '../../assets/style/_shared.scss';
 @import '../itemTable/itemTable.scss';
 
-$link-color: #689429; // #7daf37;
-
 #item-table-body {
   // background-color: $primary-color;
-}
-
-.item-link:link {
-  color: $link-color;
-}
-
-.item-link:visited {
-  color: $link-color;
-}
-
-.item-link:hover {
-  color: $secondary-color-light;
-}
-
-.item-link:active {
-
 }
 
 .item-table-row {
