@@ -1,11 +1,25 @@
 import { TableItem } from "./table";
 
+interface GenericResponse {
+  items: TableItem[];
+  pages: number;
+}
+
 export interface ItemsResponse {
   data: {
-    items: {
-      items: TableItem[];
-      pages: number;
-    };
+    items: GenericResponse;
+  };
+}
+
+export interface ItemsByNameResponse {
+  data: {
+    itemsByName: GenericResponse;
+  };
+}
+
+export interface ItemsByNameAndTypesResponse {
+  data: {
+    itemsByNameAndTypes: GenericResponse;
   };
 }
 

@@ -31,7 +31,7 @@ export interface ResponseState {
 
 export interface QueryAction {
   type: ValidPageActions | ValidQueryActions | ValidFilterActions;
-  payload?: any;
+  payload?: number | string | string[];
 }
 
 export interface QueryState {
