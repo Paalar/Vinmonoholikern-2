@@ -17,13 +17,13 @@ const queryReducer = (state: QueryState, action: QueryAction): QueryState => {
     case DECREMENT_PAGE:
       return { ...state, queried: false, pageIndex: state.pageIndex - 1 };
     case SET_PAGE:
-      return { ...state, queried: false, pageIndex: payload };
+      return { ...state, queried: false, pageIndex: payload as number };
     case RESET_PAGE:
       return { ...state, queried: false, pageIndex: 1 };
     case SET_QUERY_TEXT:
-      return { ...state, queried: false, queryText: payload };
+      return { ...state, queried: false, queryText: payload as string };
     case SET_FILTER_ITEMS:
-      return { ...state, filterItems: payload };
+      return { ...state, filterItems: payload as string[] };
     case ENABLE_QUERY:
       return { ...state, queried: true };
     default:
