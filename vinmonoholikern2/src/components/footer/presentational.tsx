@@ -19,6 +19,7 @@ const Footer: FunctionComponent = (): JSX.Element => {
           {" "}
           utenom at dataen blir hentet fra Vinmonopolets CSV filer. Disse filene
           kan bli hentet fra
+          {" "}
           {csvLink}
         </p>
         <p>
