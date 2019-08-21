@@ -6,5 +6,13 @@ export const _ABV = { value: "Alkoholprosent", class: "head-abv" };
 export const _VOLUME = { value: "Volum", class: "head-volume" };
 export const _RANGE = { value: "Bestillingsutvalg", class: "head-range" };
 
-export const tableHeaderValues = [_NAME, _TYPE, _KPA, _PRICE, _ABV, _VOLUME, _RANGE];
+export const tableHeaderValues = [
+  _NAME,
+  _TYPE,
+  _KPA,
+  _PRICE,
+  _ABV,
+  _VOLUME,
+  _RANGE
+];
 export const headersAlignLeft = [_NAME, _TYPE, _RANGE];

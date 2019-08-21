@@ -1,11 +1,8 @@
-export const removeItem = (items: any[], item: any) => {
-  return items.filter((i) => i !== item);
-};
+export const removeItem = <T>(items: T[], toBeFileredItem: T): T[] =>
+  items.filter((item): boolean => item !== toBeFileredItem);
 
-export const removeItems = (items: any[], itemsToBeRemoved: any[]) => {
-  return items.filter((item) => !itemsToBeRemoved.includes(item));
-};
+export const removeItems = <T>(items: T[], itemsToBeRemoved: T[]): T[] =>
+  items.filter((item): boolean => !itemsToBeRemoved.includes(item));
 
-export const listContainslist = (list1: any[], list2: any[]) => {
-  return list1.every((item) => list2.includes(item));
-}
+export const listContainslist = <T>(list1: T[], list2: T[]): boolean =>
+  list1.every((item): boolean => list2.includes(item));

@@ -1,10 +1,16 @@
-import { ITableItem } from "./table";
+import { TableItem } from "./table";
 
-export interface IItemsResponse {
+export interface ItemsResponse {
   data: {
     items: {
-      items: ITableItem[],
-      pages: number,
+      items: TableItem[];
+      pages: number;
     };
   };
+}
+
+export interface FetchOptions {
+  body: string;
+  method: "POST";
+  headers: object;
 }

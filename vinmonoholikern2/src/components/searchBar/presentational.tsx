@@ -1,23 +1,30 @@
-import React, { ChangeEvent, Dispatch, FormEvent, FunctionComponent, useState } from "react";
-import { IQueryAction, SET_QUERY_TEXT } from "../../reducers/queryReducer";
+import React, {
+  ChangeEvent,
+  Dispatch,
+  FormEvent,
+  FunctionComponent,
+  useState
+} from "react";
 import "./searchBar.scss";
+import { SET_QUERY_TEXT } from "../../reducers/constants";
+import { QueryAction } from "../../interfaces/ReducerInterfaces";
 
 const iconPath = "./images/search_icon.svg";
 
-interface IProps {
-  dispatchQuery: Dispatch<IQueryAction>;
+interface Props {
+  dispatchQuery: Dispatch<QueryAction>;
 }
 
-const SearchBar: FunctionComponent<IProps> = (props) => {
+const SearchBar: FunctionComponent<Props> = (props: Props): JSX.Element => {
   const { dispatchQuery } = props;
   const [input, setInput] = useState("");
 
-  const handleTextInput = (event: ChangeEvent<HTMLInputElement>) => {
+  const handleTextInput = (event: ChangeEvent<HTMLInputElement>): void => {
     const text = event.target.value;
     setInput(text);
   };
 
-  const onSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const onSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
     const parsedInput = input.trim();
     dispatchQuery({ type: SET_QUERY_TEXT, payload: parsedInput });
@@ -34,7 +41,7 @@ const SearchBar: FunctionComponent<IProps> = (props) => {
           value={input}
         />
         <button type="submit" id="search-button">
-        <img src={iconPath} alt="Search icon" />
+          <img src={iconPath} alt="Search icon" />
         </button>
       </form>
     </div>

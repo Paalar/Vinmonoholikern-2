@@ -1,9 +1,6 @@
-export interface IDropdown {
-  name: string;
-  subCategories: string[];
-}
+import { Dropdown } from "../interfaces/UtilityInterfaces";
 
-const beer: IDropdown = {
+const beer: Dropdown = {
   name: "Øl",
   subCategories: [
     "Barley wine",
@@ -20,11 +17,11 @@ const beer: IDropdown = {
     "Saison farmhouse ale",
     "Scotch ale",
     "Spesial",
-    "Surøl",
-  ],
+    "Surøl"
+  ]
 }; // 15
 
-const wine: IDropdown = {
+const wine: Dropdown = {
   name: "Vin",
   subCategories: [
     "Aromatisert vin",
@@ -41,13 +38,13 @@ const wine: IDropdown = {
     "Rødvin",
     "Sherry",
     "Sterkvin, annen",
-    "Vermut",
-  ],
+    "Vermut"
+  ]
 }; // 15
 
-const spirit: IDropdown = {
+const spirit: Dropdown = {
   name: "Brennevin",
-  subCategories:  [
+  subCategories: [
     "Akevitt",
     "Bitter",
     "Brennevin annen",
@@ -59,49 +56,45 @@ const spirit: IDropdown = {
     "Likør",
     "Rom",
     "Vodka",
-    "Whisky",
-  ],
+    "Whisky"
+  ]
 }; // 12
 
-const alcoholFree: IDropdown = {
+const alcoholFree: Dropdown = {
   name: "Alkoholfri",
   subCategories: [
     "Alkoholfri musserende drikk",
     "Alkoholfri vin",
-    "Alkoholfritt øl",
-  ],
+    "Alkoholfritt øl"
+  ]
 }; // 3
 
-const champagne: IDropdown = {
+const champagne: Dropdown = {
   name: "Champagne",
   subCategories: [
     "Champagne extra brut",
     "Champagne, annen",
     "Champagne, brut",
     "Champagne, rosé",
-    "Champagne, sec",
-  ],
+    "Champagne, sec"
+  ]
 }; // 5
 
-const other: IDropdown = {
+const other: Dropdown = {
   name: "Annet",
-  subCategories: [
-    "Mjød",
-    "Sake",
-    "Sider",
-  ],
+  subCategories: ["Mjød", "Sake", "Sider"]
 }; // 3
 
-export const productDropdownList: IDropdown[] = [
+export const productDropdownList: Dropdown[] = [
   spirit,
   wine,
   beer,
   champagne,
   other,
-  alcoholFree,
+  alcoholFree
 ];
 
-export const productTypes =  [
+export const productTypes = [
   "Akevitt",
   "Portvin",
   "Vodka",
@@ -154,5 +147,5 @@ export const productTypes =  [
   "Brennevin, nøytralt < 37,5 %",
   "Champagne, annen",
   "Scotch ale",
-  "Alkoholfri vin",
+  "Alkoholfri vin"
 ].sort();

@@ -1,27 +1,39 @@
 import React, { FunctionComponent } from "react";
-import { ITableItems } from "../../interfaces/table";
+import { TableItem } from "../../interfaces/table";
 import "./tableRow.scss";
 
-type IProps = ITableItems;
+interface Props {
+  items: TableItem[];
+}
 
-const TableRow: FunctionComponent<IProps> = (props) => {
-  const body = props.items.map((item) =>
-    <tr className="item-table-row" key={item.number}>
-      <td className="td-left item-name">
-        <a className="item-link" href={item.url} target="_blank" >{item.name}</a>
-      </td>
-      <td className="td-left item-type">{item.type}</td>
-      <td className="item-kpa">{item.apk}</td>
-      <td className="item-price">Kr. {item.price}</td>
-      <td className="item-abv">{item.abv}%</td>
-      <td className="item-volume">{item.volume}L</td>
-      <td className="td-left item-range">{item.range}</td>
-    </tr>);
-  return (
-    <tbody id="item-table-body">
-      {body}
-    </tbody>
+const TableRow: FunctionComponent<Props> = (props: Props): JSX.Element => {
+  const { items } = props;
+  const body = items.map(
+    (item): JSX.Element => {
+      const { name, number, url, type, apk, price, abv, volume, range } = item;
+      return (
+        <tr className="item-table-row" key={number}>
+          <td className="td-left item-name">
+            <a
+              className="item-link"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {name}
+            </a>
+          </td>
+          <td className="td-left item-type">{type}</td>
+          <td className="item-kpa">{apk}</td>
+          <td className="item-price">{`Kr. ${price}`}</td>
+          <td className="item-abv">{`${abv}%`}</td>
+          <td className="item-volume">{`${volume}L`}</td>
+          <td className="td-left item-range">{range}</td>
+        </tr>
+      );
+    }
   );
+  return <tbody id="item-table-body">{body}</tbody>;
 };
 
 export default TableRow;
