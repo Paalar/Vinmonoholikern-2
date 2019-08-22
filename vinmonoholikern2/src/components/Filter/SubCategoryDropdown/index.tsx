@@ -76,14 +76,13 @@ const SubCategoryDropdown: FunctionComponent<Props> = (props: Props): JSX.Elemen
     <div>
       <span className="dropdown-head">
         <span className="dropdown-checkbox">
-          <label htmlFor={htmlLabel}>
-            <input
-              type="checkbox"
-              onChange={checkboxOnChange}
-              checked={isChecked}
-              id={htmlLabel}
-            />
-          </label>
+          <input
+            type="checkbox"
+            onChange={checkboxOnChange}
+            checked={isChecked}
+            id={htmlLabel}
+          />
+          <label htmlFor={htmlLabel} />
         </span>
         <span
           className="dropdown-title"
