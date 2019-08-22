@@ -4,10 +4,10 @@ import {
   INCREMENT_PAGE,
   RESET_PAGE,
   SET_PAGE
-} from "../../reducers/constants";
-import "./pageable.scss";
-import PageableButton from "./pageableButton";
-import { QueryAction } from "../../interfaces/ReducerInterfaces";
+} from "../../../hooks/constants";
+import PageableButton from "./PageableButton";
+import { QueryAction } from "../../../interfaces/ReducerInterfaces";
+import "./Pageable.scss";
 
 interface Props {
   pages: number;

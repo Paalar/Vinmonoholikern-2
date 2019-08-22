@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import "./filterButton.scss";
+import "./SubCategoryButton.scss";
 
 interface Props {
   active: boolean;
@@ -7,7 +7,7 @@ interface Props {
   onClick: (active: boolean, category: string) => void;
 }
 
-const FilterButton: FunctionComponent<Props> = (props: Props): JSX.Element => {
+const SubCategoryButton: FunctionComponent<Props> = (props: Props): JSX.Element => {
   const { active, name, onClick } = props;
   const handleClick = (): void => onClick(!active, name);
   const handleKeyPress = (event: React.KeyboardEvent): void => {
@@ -27,4 +27,4 @@ const FilterButton: FunctionComponent<Props> = (props: Props): JSX.Element => {
   );
 };
 
-export default FilterButton;
+export default SubCategoryButton;

@@ -5,9 +5,9 @@ import React, {
   FunctionComponent,
   useState
 } from "react";
-import "./searchBar.scss";
-import { SET_QUERY_TEXT } from "../../reducers/constants";
+import { SET_QUERY_TEXT } from "../../hooks/constants";
 import { QueryAction } from "../../interfaces/ReducerInterfaces";
+import "./SearchBar.scss";
 
 const iconPath = "./images/search_icon.svg";
 

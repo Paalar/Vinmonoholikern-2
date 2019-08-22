@@ -1,8 +1,8 @@
 import { Dispatch } from "react";
-import { ItemsResponse, FetchOptions, ItemsByNameResponse, ItemsByNameAndTypesResponse } from "../interfaces/api";
+import { ItemsResponse, FetchOptions, ItemsByNameResponse, ItemsByNameAndTypesResponse } from "../interfaces/ApiInterface";
 import { ResponseActions } from "../interfaces/ReducerInterfaces";
-import { SET_RESPONSE } from "../reducers/constants";
-import { headers, url } from "./constants";
+import { SET_RESPONSE } from "../hooks/constants";
+import { headers, url } from "./ApiConstants";
 
 const options = (body: string): FetchOptions => ({
   body: JSON.stringify({ query: body }),

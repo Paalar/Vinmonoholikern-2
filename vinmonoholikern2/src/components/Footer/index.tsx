@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import "./footer.scss";
+import "./Footer.scss";
 
 const Footer: FunctionComponent = (): JSX.Element => {
   const csvLink = (

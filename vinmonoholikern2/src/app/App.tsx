@@ -3,22 +3,21 @@ import {
   queryAllItems,
   queryItems,
   queryItemsWithTypes
-} from "../../api/queryCalls";
-import pageableReducer from "../../reducers/queryReducer";
-import { ENABLE_QUERY } from "../../reducers/constants";
-import ResponseReducer from "../../reducers/responseReducer";
+} from "../api/QueryCalls";
+import QueryReducer from "../hooks/QueryReducer"
+import { ENABLE_QUERY } from "../hooks/constants";
+import ResponseReducer from "../hooks/ResponseReducer";
 import {
   ResponseActions,
   ResponseState,
   QueryState
-} from "../../interfaces/ReducerInterfaces";
-import FilterDropDownList from "../filterDropDownList/presentational";
-import Footer from "../footer/presentational";
-import ItemTable from "../itemTable/presentational";
-import Pageable from "../pageable/presentational";
-import Header from "../pageHeader/presentational";
-import SearchBar from "../searchBar/presentational";
-
+} from "../interfaces/ReducerInterfaces";
+import FilterButton from "../components/Filter/FilterButton";
+import Footer from "../components/Footer";
+import ProductTable from "../components/ProductTable/Table";
+import Pageable from "../components/ProductTable/Pageable";
+import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
 import "./app.scss";
 
 const initialResponseState: ResponseState = {
@@ -50,7 +49,7 @@ const App: FunctionComponent = (): JSX.Element => {
     initialResponseState
   );
   const [queryState, dispatchQuery] = useReducer(
-    pageableReducer,
+    QueryReducer,
     initalQueryState
   );
 
@@ -77,12 +76,12 @@ const App: FunctionComponent = (): JSX.Element => {
         <p>
           <i>Tips: Å søke med ingen tegn søker på alle varer</i>
         </p>
-        <FilterDropDownList
+        <FilterButton
           dispatchQuery={dispatchQuery}
           filterItems={filterItems}
         />
         {pageable}
-        <ItemTable items={items} />
+        <ProductTable items={items} />
         {pageable}
       </div>
       <Footer />

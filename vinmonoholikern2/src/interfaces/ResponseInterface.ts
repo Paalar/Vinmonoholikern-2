@@ -1,4 +1,4 @@
-export interface TableItem {
+export interface ItemResponse {
   name: string;
   number: number;
   apk: number;

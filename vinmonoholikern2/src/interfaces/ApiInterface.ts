@@ -1,7 +1,7 @@
-import { TableItem } from "./table";
+import { ItemResponse } from "./ResponseInterface";
 
 interface GenericResponse {
-  items: TableItem[];
+  items: ItemResponse[];
   pages: number;
 }
 

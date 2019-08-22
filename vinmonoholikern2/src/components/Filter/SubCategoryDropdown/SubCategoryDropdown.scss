@@ -1,55 +1,80 @@
-@import "../../assets/style/_shared.scss";
+@import "../../../assets/style/_shared.scss";
 
-.filter-border-bottom {
-  border-end-start-radius: 10px;
-  border-end-end-radius: 10px;
+.dropdown-category {
+  font-size: 1.5rem;
+  bottom: 0;
 }
 
-.filter-border-top {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
+.dropdown-checkbox {
 
-#filter-container {
-  @extend .filter-border-top;
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-}
+  input[type="checkbox"] {
+    opacity: 0;
+  }
 
-.filter-head {
-  background-color: $secondary-color-light;
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 1rem;
-  align-items: center;
-  @extend .filter-border-top;
-  
-  img {
-    height: 100%;
+  label {
+    cursor: pointer;
+    position: relative;
+
+    // 16px width of fake checkbox + 6px distance between fake checkbox and text
+    padding-left: 2rem;
+  }
+
+  label::before, label::after {
     position: absolute;
-    right: 0;
-    bottom: 0;
+    content: "";
+    
+    // Needed for the line-height to take effect
+    display: inline-block;
+  }
+
+  /*Outer box of the fake checkbox*/
+  label::before{
+    height: 16px;
+    width: 16px;
+    
+    border: 3px solid $secondary-color-dark;
+    left: 0px;
+
+    // (24px line-height - 16px height of fake checkbox) / 2 - 1px
+    // for the border to vertically center it.
+    top: -3px;
+  }
+
+  // Checkmark of the fake checkbox
+  label::after {
+    height: 6px;
+    width: 12px;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    
+    transform: rotate(-45deg);
+    color: $secondary-color-dark;
+
+    left: 4px;
+    top: 3px;
+  }
+
+  // Hide the checkmark by default
+  input[type="checkbox"] + label::after {
+    content: none;
+  }
+
+  // Unhide the checkmark on the checked state
+  input[type="checkbox"]:checked + label::after {
+    content: "";
+  }
+
+  // Adding focus styles on the outer-box of the fake checkbox
+  input[type="checkbox"]:focus + label::before {
+    outline: rgb(59, 153, 252) auto 5px;
   }
 }
 
-.filter-head:hover {
-  background-color: $secondary-color;
+.dropdown-title:hover {
   cursor: pointer;
-}
+  color: $secondary-color;
+};
 
-#filter-head-unactive {
-  @extend .filter-border-bottom;
-}
-
-#filter-items {
-  @extend .filter-border-bottom;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; */
-  display: grid;
-  grid-template-columns: repeat(3, [col-types] 33%);
-  grid-template-rows: repeat(2, [row-types] 50%);
-  background-color: $primary-color;
-  padding: 2rem 1rem 3rem 1rem;
+.dropdown-title {
+  display: inline-flex;
 }

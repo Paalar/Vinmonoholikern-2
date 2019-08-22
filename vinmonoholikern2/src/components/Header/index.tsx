@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import "./pageHeader.scss";
+import "./Header.scss";
 
 const Header: FunctionComponent = (): JSX.Element => {
   return (

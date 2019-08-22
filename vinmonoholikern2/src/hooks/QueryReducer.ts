@@ -9,7 +9,7 @@ import {
 } from "./constants";
 import { QueryState, QueryAction } from "../interfaces/ReducerInterfaces";
 
-const queryReducer = (state: QueryState, action: QueryAction): QueryState => {
+const QueryReducer = (state: QueryState, action: QueryAction): QueryState => {
   const { type, payload } = action;
   switch (type) {
     case INCREMENT_PAGE:
@@ -31,4 +31,4 @@ const queryReducer = (state: QueryState, action: QueryAction): QueryState => {
   }
 };
 
-export default queryReducer;
+export default QueryReducer;

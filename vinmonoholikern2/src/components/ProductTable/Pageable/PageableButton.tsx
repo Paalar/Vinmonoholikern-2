@@ -1,6 +1,6 @@
 import React, { Dispatch, FunctionComponent } from "react";
-import { QueryAction } from "../../interfaces/ReducerInterfaces";
-import "./pageable.scss";
+import { QueryAction } from "../../../interfaces/ReducerInterfaces";
+import "./Pageable.scss";
 
 interface Props {
   action: QueryAction;

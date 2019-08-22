@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from "react";
-import "./loadingBar.scss";
+import "./LoadingBar.scss";
 
 const LoadingBar: FunctionComponent = (): JSX.Element => {
   return (

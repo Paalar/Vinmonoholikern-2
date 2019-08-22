@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { headersAlignLeft, tableHeaderValues } from "./constants";
-import "./tableHeader.scss";
+import "./TableHeader.scss";
 
 const TableHeader: FunctionComponent = (): JSX.Element => {
   const tableHeaders = tableHeaderValues.map(

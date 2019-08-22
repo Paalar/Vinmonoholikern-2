@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from "react";
-import { TableItem } from "../../interfaces/table";
-import "./tableRow.scss";
+import { ItemResponse } from "../../../interfaces/ResponseInterface";
+import "./TableRow.scss";
 
 interface Props {
-  items: TableItem[];
+  items: ItemResponse[];
 }
 
 const TableRow: FunctionComponent<Props> = (props: Props): JSX.Element => {

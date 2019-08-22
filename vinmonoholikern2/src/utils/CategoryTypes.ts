@@ -1,6 +1,6 @@
 import { Dropdown } from "../interfaces/UtilityInterfaces";
 
-const beer: Dropdown = {
+const BeerCategories: Dropdown = {
   name: "Øl",
   subCategories: [
     "Barley wine",
@@ -21,7 +21,7 @@ const beer: Dropdown = {
   ]
 }; // 15
 
-const wine: Dropdown = {
+const WineCategories: Dropdown = {
   name: "Vin",
   subCategories: [
     "Aromatisert vin",
@@ -42,7 +42,7 @@ const wine: Dropdown = {
   ]
 }; // 15
 
-const spirit: Dropdown = {
+const SpiritCategories: Dropdown = {
   name: "Brennevin",
   subCategories: [
     "Akevitt",
@@ -60,7 +60,7 @@ const spirit: Dropdown = {
   ]
 }; // 12
 
-const alcoholFree: Dropdown = {
+const AlcoholFreeCategories: Dropdown = {
   name: "Alkoholfri",
   subCategories: [
     "Alkoholfri musserende drikk",
@@ -69,7 +69,7 @@ const alcoholFree: Dropdown = {
   ]
 }; // 3
 
-const champagne: Dropdown = {
+const ChampagneCategories: Dropdown = {
   name: "Champagne",
   subCategories: [
     "Champagne extra brut",
@@ -80,72 +80,18 @@ const champagne: Dropdown = {
   ]
 }; // 5
 
-const other: Dropdown = {
+const OtherCategories: Dropdown = {
   name: "Annet",
   subCategories: ["Mjød", "Sake", "Sider"]
 }; // 3
 
-export const productDropdownList: Dropdown[] = [
-  spirit,
-  wine,
-  beer,
-  champagne,
-  other,
-  alcoholFree
+const productDropdownList: Dropdown[] = [
+  SpiritCategories,
+  WineCategories,
+  BeerCategories,
+  ChampagneCategories,
+  OtherCategories,
+  AlcoholFreeCategories
 ];
 
-export const productTypes = [
-  "Akevitt",
-  "Portvin",
-  "Vodka",
-  "Druebrennevin",
-  "Whisky",
-  "Likør",
-  "Genever",
-  "Gin",
-  "Bitter",
-  "Fruktbrennevin",
-  "Vermut",
-  "Aromatisert vin",
-  "Brennevin, annet",
-  "Sherry",
-  "Rødvin",
-  "Hvitvin",
-  "Perlende vin, rosé",
-  "Rosévin",
-  "Champagne, brut",
-  "Champagne, sec",
-  "Musserende vin, rosé",
-  "Champagne, rosé",
-  "Musserende vin",
-  "Perlende vin, rød",
-  "Porter & stout",
-  "Perlende vin, hvit",
-  "Rom",
-  "Klosterstil",
-  "India pale ale",
-  "Spesial",
-  "Mørk lager",
-  "Saison farmhouse ale",
-  "Hveteøl",
-  "Pale ale",
-  "Lys ale",
-  "Sterkvin, annen",
-  "Barley wine",
-  "Fruktvin",
-  "Sider",
-  "Lys lager",
-  "Brown ale",
-  "Alkoholfri musserende drikk",
-  "Champagne extra brut",
-  "Sake",
-  "Surøl",
-  "Madeira",
-  "Alkoholfritt øl",
-  "Red/amber",
-  "Mjød",
-  "Brennevin, nøytralt < 37,5 %",
-  "Champagne, annen",
-  "Scotch ale",
-  "Alkoholfri vin"
-].sort();
+export default productDropdownList;
