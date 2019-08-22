@@ -1,4 +1,4 @@
-export interface ITableItem {
+export interface TableItem {
   name: string;
   number: number;
   apk: number;
@@ -9,8 +9,4 @@ export interface ITableItem {
   url: string;
   range: string;
   type: string;
-}
-
-export interface ITableItems {
-  items: ITableItem[];
 }

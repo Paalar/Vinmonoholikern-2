@@ -1,16 +1,19 @@
 import React, { FunctionComponent } from "react";
-import { ITableItems } from "../../interfaces/table";
+import { TableItem } from "../../interfaces/table";
 import TableHeader from "../tableHeader/presentational";
 import TableRow from "../tableRow/presentational";
 import "./itemTable.scss";
 
-type IProps = ITableItems;
+interface Props {
+  items: TableItem[];
+}
 
-const ItemTable: FunctionComponent<IProps> = (props: IProps) => {
+const ItemTable: FunctionComponent<Props> = (props: Props): JSX.Element => {
+  const { items } = props;
   return (
     <table id="item-table">
       <TableHeader />
-      <TableRow items={props.items}/>
+      <TableRow items={items} />
     </table>
   );
 };
