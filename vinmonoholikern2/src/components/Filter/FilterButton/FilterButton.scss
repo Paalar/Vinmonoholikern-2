@@ -16,7 +16,7 @@
   margin-top: 1rem;
 }
 
-.category-dropdown {
+.filter-dropdown {
   background-color: $secondary-color-light;
   position: relative;
   display: flex;
@@ -33,12 +33,12 @@
   }
 }
 
-.category-dropdown:hover {
+.filter-dropdown:hover {
   background-color: $secondary-color;
   cursor: pointer;
 }
 
-#category-dropdown-unactive {
+#filter-dropdown-unactive {
   @extend .filter-border-bottom;
 }
 

@@ -23,7 +23,7 @@ const Presentational: FunctionComponent<Props> = (props: Props): JSX.Element => 
   return (
     <div id="filter-container">
       <div
-        className="category-dropdown"
+        className="filter-dropdown"
         id={isDropdownShownId}
         onClick={toggleShowDropdown}
         onKeyPress={handleKeyPress}

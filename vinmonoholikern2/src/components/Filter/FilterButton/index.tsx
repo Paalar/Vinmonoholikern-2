@@ -21,11 +21,11 @@ const FilterButton: FunctionComponent<Props> = (props: Props): JSX.Element => {
   if (showDropdown) {
     chevronPath = chevronUp;
     hideFilters = undefined;
-    isDropdownShownId = "category-dropdown-active";
+    isDropdownShownId = "filter-dropdown-active";
   } else {
     chevronPath = chevronDown;
     hideFilters = { display: "none" };
-    isDropdownShownId = "category-dropdown-unactive";
+    isDropdownShownId = "filter-dropdown-unactive";
   }
 
   const subCategoryDropdownList = productDropdownList.map((dropdown): JSX.Element => (
