@@ -16,7 +16,7 @@
   margin-top: 1rem;
 }
 
-.filter-head {
+.category-dropdown {
   background-color: $secondary-color-light;
   position: relative;
   display: flex;
@@ -33,20 +33,17 @@
   }
 }
 
-.filter-head:hover {
+.category-dropdown:hover {
   background-color: $secondary-color;
   cursor: pointer;
 }
 
-#filter-head-unactive {
+#category-dropdown-unactive {
   @extend .filter-border-bottom;
 }
 
-#filter-items {
+#category-dropdown-menu {
   @extend .filter-border-bottom;
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly; */
   display: grid;
   grid-template-columns: repeat(3, [col-types] 33%);
   grid-template-rows: repeat(2, [row-types] 50%);
