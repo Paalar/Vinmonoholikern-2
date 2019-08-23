@@ -8,8 +8,8 @@ import {
   SET_QUERY_TEXT,
   ENABLE_QUERY,
   SET_FILTER_ITEMS
-} from "../reducers/constants";
-import { TableItem } from "./table";
+} from "../hooks/constants";
+import { ItemResponse } from "./ResponseInterface";
 
 type ValidPageActions =
   | typeof INCREMENT_PAGE
@@ -26,7 +26,7 @@ export interface ResponseActions {
 
 export interface ResponseState {
   pages: number;
-  items: TableItem[];
+  items: ItemResponse[];
 }
 
 export interface QueryAction {

@@ -1,0 +1,49 @@
+@import '../../../assets/style/_shared.scss';
+
+#item-table-head {
+  background-color: $primary-color; 
+  padding-left: 1rem;
+
+  tr {
+    display: grid;
+    grid-template-columns:
+    [head-name] 30%
+    [head-type] 10%
+    [head-kpa] 10%
+    [head-price] 10%
+    [head-abv] 15%
+    [head-volume] 10%
+    [head-range] 15%;
+    th {
+      padding: 1rem 0.5rem;
+    }
+  }
+}
+
+.head-name {
+  grid-column-start: head-name;
+}
+
+.head-type {
+  grid-column-start: head-type;
+}
+
+.head-kpa {
+  grid-column-start: head-kpa;
+}
+
+.head-price {
+  grid-column-start: head-price;
+}
+
+.head-abv {
+  grid-column-start: head-abv;
+}
+
+.head-volume {
+  grid-column-start: head-volume;
+}
+
+.head-range {
+  grid-column-start: head-range;
+}

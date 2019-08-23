@@ -1,0 +1,53 @@
+@import '../../../assets/style/_shared.scss';
+@import '../Table/Table.scss';
+
+#item-table-body {
+  // background-color: $primary-color;
+}
+
+.item-table-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns:
+    [item-name] 30%
+    [item-type] 10%
+    [item-kpa] 10%
+    [item-price] 10%
+    [item-abv] 15%
+    [item-volume] 10%
+    [item-range] 15%;
+  td {
+    padding: 1.5rem 0.5rem;
+  }
+  -webkit-box-shadow: 0px 7px 5px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 7px 5px -7px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 5px -7px rgba(0,0,0,0.75);
+}
+
+.item-name {
+  grid-column-start: item-name;
+}
+
+.item-type {
+  grid-column-start: item-type;
+}
+
+.item-kpa {
+  grid-column-start: item-kpa;
+}
+
+.item-price {
+  grid-column-start: item-price;
+}
+
+.item-abv {
+  grid-column-start: item-abv;
+}
+
+.item-volume {
+  grid-column-start: item-volume;
+}
+
+.item-range {
+  grid-column-start: item-range;
+}

@@ -1,0 +1,55 @@
+@import "../../../assets/style/_shared.scss";
+
+.filter-border-bottom {
+  border-end-start-radius: 10px;
+  border-end-end-radius: 10px;
+}
+
+.filter-border-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+#filter-container {
+  @extend .filter-border-top;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.filter-head {
+  background-color: $secondary-color-light;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  align-items: center;
+  @extend .filter-border-top;
+  
+  img {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.filter-head:hover {
+  background-color: $secondary-color;
+  cursor: pointer;
+}
+
+#filter-head-unactive {
+  @extend .filter-border-bottom;
+}
+
+#filter-items {
+  @extend .filter-border-bottom;
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; */
+  display: grid;
+  grid-template-columns: repeat(3, [col-types] 33%);
+  grid-template-rows: repeat(2, [row-types] 50%);
+  background-color: $primary-color;
+  padding: 2rem 1rem 3rem 1rem;
+}
