@@ -1,11 +1,11 @@
 @import "../../../assets/style/_shared.scss";
 
-.dropdown-category {
+.category-title {
   font-size: 1.5rem;
   bottom: 0;
 }
 
-.dropdown-checkbox {
+.category-checkbox {
 
   input[type="checkbox"] {
     opacity: 0;
@@ -70,11 +70,11 @@
   }
 }
 
-.dropdown-title:hover {
+.category-dropdown:hover {
   cursor: pointer;
   color: $secondary-color;
 };
 
-.dropdown-title {
+.category-dropdown {
   display: inline-flex;
 }

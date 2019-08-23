@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { SET_QUERY_TEXT } from "../../hooks/constants";
 import { QueryAction } from "../../interfaces/ReducerInterfaces";
+import Presentational from "./presentational";
 import "./SearchBar.scss";
 
 const iconPath = "./images/search_icon.svg";
@@ -17,35 +18,27 @@ interface Props {
 
 const SearchBar: FunctionComponent<Props> = (props: Props): JSX.Element => {
   const { dispatchQuery } = props;
-  const [input, setInput] = useState("");
+  const [inputText, setinputText] = useState("");
 
   const handleTextInput = (event: ChangeEvent<HTMLInputElement>): void => {
     const text = event.target.value;
-    setInput(text);
+    setinputText(text);
   };
 
   const onSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    const parsedInput = input.trim();
+    const parsedInput = inputText.trim();
     dispatchQuery({ type: SET_QUERY_TEXT, payload: parsedInput });
   };
 
   return (
-    <div className="form-container">
-      <form id="search-form" onSubmit={onSubmit}>
-        <input
-          type="text"
-          id="search-bar"
-          placeholder="Dworek"
-          onChange={handleTextInput}
-          value={input}
-        />
-        <button type="submit" id="search-button">
-          <img src={iconPath} alt="Search icon" />
-        </button>
-      </form>
-    </div>
-  );
+    <Presentational
+      inputText={inputText}
+      handleTextInput={handleTextInput}
+      onSubmit={onSubmit}
+      iconPath={iconPath}
+    />
+  )
 };
 
 export default SearchBar;

@@ -1,5 +1,6 @@
 import React, { FunctionComponent } from "react";
 import { headersAlignLeft, tableHeaderValues } from "./constants";
+import Presentational from "./presentational";
 import "./TableHeader.scss";
 
 const TableHeader: FunctionComponent = (): JSX.Element => {
@@ -17,9 +18,7 @@ const TableHeader: FunctionComponent = (): JSX.Element => {
     }
   );
   return (
-    <thead id="item-table-head">
-      <tr>{tableHeaders}</tr>
-    </thead>
+    <Presentational>{tableHeaders}</Presentational>
   );
 };
 

@@ -14,6 +14,7 @@ import SubCategoryButton from "../SubCategoryButton";
 import { QueryAction } from "../../../interfaces/ReducerInterfaces";
 import { Dropdown } from "../../../interfaces/UtilityInterfaces";
 import { chevronDown, chevronUp } from "../constants";
+import Presentational from "./presentational";
 import "./SubCategoryDropdown.scss";
 
 interface Props {
@@ -24,7 +25,15 @@ interface Props {
 
 const SubCategoryDropdown: FunctionComponent<Props> = (props: Props): JSX.Element => {
   const { dropdown, dispatch, filterItems } = props;
-  const [showDropdown, toggleDropdown] = useState(false);
+  const { name, subCategories } = dropdown;
+  const [showDropdown, setDropdown] = useState(false);
+  let subCategoryButtonList;
+
+  const htmlLabel = `checkbox-${name}`;
+  const selectedCategories = filterItems.filter((item): boolean => subCategories.includes(item));
+  const isChecked = listContainslist(subCategories, filterItems);
+  const toggleDropdown = (): void => setDropdown(!showDropdown);
+  const chevronPath = showDropdown ? chevronUp : chevronDown;
 
   const itemOnClick = (active: boolean, category: string): void => {
     let payload;
@@ -37,11 +46,8 @@ const SubCategoryDropdown: FunctionComponent<Props> = (props: Props): JSX.Elemen
     }
   };
 
-  const selectedCategories = filterItems.filter((item): boolean => dropdown.subCategories.includes(item));
-
   const checkboxOnChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const { checked } = event.target;
-    const { subCategories } = dropdown;
     let processedItems;
     if (checked) {
       processedItems = subCategories.filter((item): boolean =>
@@ -57,13 +63,11 @@ const SubCategoryDropdown: FunctionComponent<Props> = (props: Props): JSX.Elemen
     }
   };
 
-  const isChecked = listContainslist(dropdown.subCategories, filterItems);
-  const chevron = showDropdown ? chevronUp : chevronDown;
   const handleKeyPress = (event: React.KeyboardEvent): void => {
-    if (event.key === "Enter") toggleDropdown(!showDropdown);
+    if (event.key === "Enter") toggleDropdown();
   }
 
-  const categoryButtons = dropdown.subCategories.map((category): JSX.Element => (
+  subCategoryButtonList = subCategories.map((category): JSX.Element => (
     <SubCategoryButton
       active={selectedCategories.includes(category)}
       key={category}
@@ -71,37 +75,21 @@ const SubCategoryDropdown: FunctionComponent<Props> = (props: Props): JSX.Elemen
       onClick={itemOnClick}
     />
   ));
-  const htmlLabel = `checkbox-${dropdown.name}`;
+  if (!showDropdown) subCategoryButtonList = null;
+
   return (
-    <div>
-      <span className="dropdown-head">
-        <span className="dropdown-checkbox">
-          <input
-            type="checkbox"
-            onChange={checkboxOnChange}
-            checked={isChecked}
-            id={htmlLabel}
-          />
-          <label htmlFor={htmlLabel} />
-        </span>
-        <span
-          className="dropdown-title"
-          onClick={(): void => toggleDropdown(!showDropdown)}
-          onKeyPress={handleKeyPress}
-          role="button"
-          tabIndex={-1}
-        >
-          <span className="dropdown-category">{dropdown.name}</span>
-          <img
-            className="dropdown-chevron"
-            src={chevron}
-            alt="Open/Close sub categories"
-          />
-        </span>
-      </span>
-      {showDropdown ? categoryButtons : null}
-    </div>
-  );
+    <Presentational
+      checkboxOnChange={checkboxOnChange}
+      chevronPath={chevronPath}
+      handleKeyPress={handleKeyPress}
+      htmlLabel={htmlLabel}
+      isChecked={isChecked}
+      title={name}
+      toggleDropdown={toggleDropdown}
+    >
+      {subCategoryButtonList}
+    </Presentational>
+  )
 };
 
 export default SubCategoryDropdown;

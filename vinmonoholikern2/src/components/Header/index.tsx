@@ -3,7 +3,7 @@ import "./Header.scss";
 
 const Header: FunctionComponent = (): JSX.Element => {
   return (
-    <div id="header-div">
+    <div id="header">
       <h1>Vinmonoholikern</h1>
     </div>
   );

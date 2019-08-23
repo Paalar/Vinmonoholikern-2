@@ -7,6 +7,7 @@ import {
 } from "../../../hooks/constants";
 import PageableButton from "./PageableButton";
 import { QueryAction } from "../../../interfaces/ReducerInterfaces";
+import Presentational from "./presentational";
 import "./Pageable.scss";
 
 interface Props {
@@ -124,14 +125,18 @@ const Pageable: FunctionComponent<Props> = (props: Props): JSX.Element => {
     "1 ...",
     "pageable-first"
   );
+
+
+  
   return (
-    <div id="pageable-container">
-      {pageIndex > 1 ? decrementPageIndex : null}
-      {lowerBound > 1 ? firstPage : null}
-      <div id="pageable-row">{pageable}</div>
-      {upperBound <= pages ? finalPage : null}
-      {pageIndex < pages ? incrementPageIndex : null}
-    </div>
+    <Presentational
+      firstPage={lowerBound > 1 ? firstPage : null}
+      lastPage={upperBound <= pages ? finalPage : null}
+      next={pageIndex < pages ? incrementPageIndex : null}
+      previous={pageIndex > 1 ? decrementPageIndex : null}
+    >
+      {pageable}
+    </Presentational>
   );
 };
 

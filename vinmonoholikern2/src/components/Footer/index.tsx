@@ -1,13 +1,13 @@
 import React, { FunctionComponent } from "react";
 import "./Footer.scss";
 
-const Footer: FunctionComponent = (): JSX.Element => {
-  const csvLink = (
-    <a href="https://www.vinmonopolet.no/datadeling/csv">
-      https://www.vinmonopolet.no/datadeling/csv
-    </a>
-  );
+const csvLink = (
+  <a href="https://www.vinmonopolet.no/datadeling/csv">
+    https://www.vinmonopolet.no/datadeling/csv
+  </a>
+);
 
+const Footer: FunctionComponent = (): JSX.Element => {
   return (
     <div id="footer">
       <div id="footer-seperator" />
