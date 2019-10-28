@@ -4,19 +4,20 @@ $search-bar-border: 1px solid $secondary-color-dark;
 
 .form-container {
   margin: 1rem 0;
+  width: auto;
 }
 
 #search-form {
-  margin: auto;
-  display: flex;
   position: relative;
+  justify-content: left;
+  width: 100%;
 }
 
 #search-bar {
   background-color: $primary-color;
   padding: 0.7rem;
   font-size: 1.5rem;
-  width: 90%;
+  width: 60%;
   border: 0;
   border-bottom: $search-bar-border;
   cursor: text;
@@ -24,9 +25,8 @@ $search-bar-border: 1px solid $secondary-color-dark;
 
 #search-button {
   position: absolute;
-  right: 0;
   height: 100%;
-  width: 10%;
+  width: auto;
   background-color: $primary-color;
   border: 0;
   border-bottom: $search-bar-border;

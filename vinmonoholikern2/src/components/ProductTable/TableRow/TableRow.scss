@@ -51,3 +51,9 @@
 .item-range {
   grid-column-start: item-range;
 }
+
+@media (max-width: 500px) {
+  .item-volume {
+    visibility: hidden;
+  }
+}

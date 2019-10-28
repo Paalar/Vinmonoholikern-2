@@ -42,3 +42,20 @@
   grid-column-start: next-page;
   color: $secondary-color;
 }
+
+@media (max-width: 500px) {
+  #pageable-container {
+    display: grid;
+    grid-template-columns:
+      [previous-page] 20%
+      [first-page] 20%
+      [col-pages] 20%
+      [last-page] 20%
+      [next-page] 20%;
+  }
+}
+
+#pageable-previous:disabled, #pageable-next:disabled {
+  color: gray;
+  border: 0;
+}

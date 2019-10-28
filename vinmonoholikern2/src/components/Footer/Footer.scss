@@ -13,3 +13,10 @@
 #footer-info {
   padding: 4rem;
 }
+
+@media (max-width: 500px) {
+  #footer-info {
+    padding: 0.3rem;
+    word-break: break-all;
+  }
+}

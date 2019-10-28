@@ -20,3 +20,9 @@ a:visited {
 a:hover {
   color: $secondary-color-light;
 }
+
+@media (max-width: 500px) {
+  #content {
+    width: 95%;
+  }
+}
