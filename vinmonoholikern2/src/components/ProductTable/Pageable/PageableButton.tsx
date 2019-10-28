@@ -7,18 +7,20 @@ interface Props {
   onClick: Dispatch<QueryAction>;
   isActive: boolean;
   id?: string;
+  disabled?: boolean;
   children: string | number;
 }
 
 const PageableButton: FunctionComponent<Props> = (
   props: Props
 ): JSX.Element => {
-  const { children, action, onClick, isActive, id } = props;
+  const { children, action, onClick, isActive, id, disabled } = props;
   return (
     <button
       type="button"
       id={id}
       className={`pageable-button${isActive ? " active-page" : ""}`}
+      disabled={disabled}
       onClick={(): void => onClick(action)}
     >
       {children}

@@ -9,17 +9,13 @@ import PageableButton from "./PageableButton";
 import { QueryAction } from "../../../interfaces/ReducerInterfaces";
 import Presentational from "./presentational";
 import "./Pageable.scss";
+import ScreenSizeState from "../../../hooks/ScreenSizeState";
 
 interface Props {
   pages: number;
   dispatchPageable: Dispatch<QueryAction>;
   pageIndex: number;
 }
-
-const BUTTONS_ON_LEFT = 4;
-const BUTTONS_ON_RIGHT = 4;
-const FIRST_PAGE = 1;
-const SINGLE_PAGE = 1;
 
 const createPageableRow = (
   lowerBound: number,
@@ -53,34 +49,29 @@ const Pageable: FunctionComponent<Props> = (props: Props): JSX.Element => {
     dispatchPageable({ type: RESET_PAGE });
     return <></>;
   }
+  const { width } = ScreenSizeState();
+
+  const BUTTONS_ON_LEFT = width < 500 ? 0 : 4;
+  const BUTTONS_ON_RIGHT = width < 500 ? 0 : 4;
+  const FIRST_PAGE = 1;
+  const SINGLE_PAGE = 1;
 
   const createPageableButton = (
     action: QueryAction,
     isActive: boolean,
     text: string,
-    id?: string
+    id?: string,
+    disabled?: boolean
   ): JSX.Element => (
     <PageableButton
       action={action}
       id={id}
       isActive={isActive}
       onClick={dispatchPageable}
+      disabled={disabled}
     >
       {text}
     </PageableButton>
-  );
-
-  const decrementPageIndex = createPageableButton(
-    { type: DECREMENT_PAGE },
-    false,
-    "Previous",
-    "pageable-previous"
-  );
-  const incrementPageIndex = createPageableButton(
-    { type: INCREMENT_PAGE },
-    false,
-    "Next",
-    "pageable-next"
   );
 
   let lowerBound = 1;
@@ -101,6 +92,22 @@ const Pageable: FunctionComponent<Props> = (props: Props): JSX.Element => {
       lowerBound = 1;
     }
   }
+
+  const decrementPageIndex = createPageableButton(
+    { type: DECREMENT_PAGE },
+    false,
+    "Previous",
+    "pageable-previous",
+    !(pageIndex > 1)
+  );
+  const incrementPageIndex = createPageableButton(
+    { type: INCREMENT_PAGE },
+    false,
+    "Next",
+    "pageable-next",
+    !(pageIndex < pages)
+  );
+
 
   const pageable =
     pages !== SINGLE_PAGE
@@ -132,8 +139,8 @@ const Pageable: FunctionComponent<Props> = (props: Props): JSX.Element => {
     <Presentational
       firstPage={lowerBound > 1 ? firstPage : null}
       lastPage={upperBound <= pages ? finalPage : null}
-      next={pageIndex < pages ? incrementPageIndex : null}
-      previous={pageIndex > 1 ? decrementPageIndex : null}
+      next={incrementPageIndex}
+      previous={decrementPageIndex}
     >
       {pageable}
     </Presentational>

@@ -11,10 +11,12 @@ interface Props {
 const ItemTable: FunctionComponent<Props> = (props: Props): JSX.Element => {
   const { items } = props;
   return (
-    <table id="item-table">
-      <TableHeader />
-      <TableRow items={items} />
-    </table>
+    <div id="table-div">
+      <table id="item-table">
+        <TableHeader />
+        <TableRow items={items} />
+      </table>
+    </div>
   );
 };
 
