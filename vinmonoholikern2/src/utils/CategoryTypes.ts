@@ -47,7 +47,7 @@ const SpiritCategories: Dropdown = {
   subCategories: [
     "Akevitt",
     "Bitter",
-    "Brennevin annen",
+    "Brennevin, annet",
     "Brennevin, nøytralt < 37,5 %",
     "Druebrennevin",
     "Fruktbrennevin",
